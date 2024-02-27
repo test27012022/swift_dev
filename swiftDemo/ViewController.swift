@@ -11,11 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .blue
     }
     private func hello() {
         print( "say hello")
     }
+    
 
 }
 
