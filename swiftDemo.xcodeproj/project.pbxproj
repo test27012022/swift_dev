@@ -29,6 +29,8 @@
 		0A42781E2B9252900016BBC3 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A42781D2B9252900016BBC3 /* ThemeFont.swift */; };
 		0A4278212B9252FD0016BBC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278202B9252FD0016BBC3 /* UIColor+Extension.swift */; };
 		0A4278252B9486330016BBC3 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278242B9486330016BBC3 /* LabelFactory.swift */; };
+		0A4278272B9729660016BBC3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278262B9729660016BBC3 /* UIView+Extension.swift */; };
+		0A4278292B973D610016BBC3 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278282B973D610016BBC3 /* AmountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		0A42781D2B9252900016BBC3 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
 		0A4278202B9252FD0016BBC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0A4278242B9486330016BBC3 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		0A4278262B9729660016BBC3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0A4278282B973D610016BBC3 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 				0A4278142B8E2F2C0016BBC3 /* BillInputView.swift */,
 				0A4278162B8E2F520016BBC3 /* TipInputView.swift */,
 				0A4278182B8E2F7A0016BBC3 /* SplitInputView.swift */,
+				0A4278282B973D610016BBC3 /* AmountView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4278202B9252FD0016BBC3 /* UIColor+Extension.swift */,
+				0A4278262B9729660016BBC3 /* UIView+Extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4278292B973D610016BBC3 /* AmountView.swift in Sources */,
 				0A4277D62B89F8DE0016BBC3 /* CalculatorVC.swift in Sources */,
+				0A4278272B9729660016BBC3 /* UIView+Extension.swift in Sources */,
 				0A4278112B8E2E000016BBC3 /* LogoView.swift in Sources */,
 				0A42781C2B92526A0016BBC3 /* ThemeColor.swift in Sources */,
 				0A4278212B9252FD0016BBC3 /* UIColor+Extension.swift in Sources */,
