@@ -22,14 +22,13 @@ class LogoView: UIView {
             attributes:[.font: ThemeFont.demiBold(ofSize: 16)])
         text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(3, 3))
         label.attributedText = text
-        label.backgroundColor = .red
         return label
     }()
     
     private let bottomLabel: UILabel = {
         LabelFactory.buildLabel(text: "Calculator", 
                                 font: ThemeFont.demiBold(ofSize: 20),
-                                backgroundColor: .blue, textAlignment: .left)
+                                textAlignment: .left)
     }()
     
     private lazy var vStackView: UIStackView = {
@@ -64,7 +63,6 @@ class LogoView: UIView {
     }
     
     private func layout() {
-        backgroundColor = .lightGray
         addSubview(hStackView)
         
         hStackView.snp.makeConstraints { make in
