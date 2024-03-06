@@ -31,6 +31,8 @@
 		0A4278252B9486330016BBC3 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278242B9486330016BBC3 /* LabelFactory.swift */; };
 		0A4278272B9729660016BBC3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278262B9729660016BBC3 /* UIView+Extension.swift */; };
 		0A4278292B973D610016BBC3 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4278282B973D610016BBC3 /* AmountView.swift */; };
+		0A42782C2B98FAA90016BBC3 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A42782B2B98FAA90016BBC3 /* Tip.swift */; };
+		0A42782E2B98FB0B0016BBC3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A42782D2B98FB0B0016BBC3 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		0A4278242B9486330016BBC3 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		0A4278262B9729660016BBC3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		0A4278282B973D610016BBC3 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		0A42782B2B98FAA90016BBC3 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		0A42782D2B98FB0B0016BBC3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 		0A4277D02B89F8DE0016BBC3 /* swiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0A42782A2B98FA8E0016BBC3 /* model */,
 				0A4278232B9486180016BBC3 /* factory */,
 				0A4278222B947B780016BBC3 /* support */,
 				0A42781F2B9252D20016BBC3 /* extension */,
@@ -174,6 +179,7 @@
 				0A4278162B8E2F520016BBC3 /* TipInputView.swift */,
 				0A4278182B8E2F7A0016BBC3 /* SplitInputView.swift */,
 				0A4278282B973D610016BBC3 /* AmountView.swift */,
+				0A42782D2B98FB0B0016BBC3 /* HeaderView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -213,6 +219,14 @@
 				0A4278242B9486330016BBC3 /* LabelFactory.swift */,
 			);
 			path = factory;
+			sourceTree = "<group>";
+		};
+		0A42782A2B98FA8E0016BBC3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0A42782B2B98FAA90016BBC3 /* Tip.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,8 +387,10 @@
 				0A42781E2B9252900016BBC3 /* ThemeFont.swift in Sources */,
 				0A4277D42B89F8DE0016BBC3 /* SceneDelegate.swift in Sources */,
 				0A4278252B9486330016BBC3 /* LabelFactory.swift in Sources */,
+				0A42782C2B98FAA90016BBC3 /* Tip.swift in Sources */,
 				0A4278192B8E2F7A0016BBC3 /* SplitInputView.swift in Sources */,
 				0A4278172B8E2F520016BBC3 /* TipInputView.swift in Sources */,
+				0A42782E2B98FB0B0016BBC3 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
