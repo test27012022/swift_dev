@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillInputView: UIView {
     
@@ -59,14 +61,30 @@ class BillInputView: UIView {
         return textField
     }()
     
+    private let billSubject: PassthroughSubject<Double, Never> = .init() // 3. здесь храним инфу с текстфилд
+    
+    var valuePublisher: AnyPublisher<Double, Never> { //4. отсюда транслируем на весь проект инфу с billSubject
+        return billSubject.eraseToAnyPublisher()
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func observe() {
+        textField.textPublisher.sink { [unowned self] text in // 1. забираем инфу с текстфилд
+            billSubject.send(text?.doubleValue ?? 0) // 2. передаем через трансформацию "текст в дабл" в billSubject
+        }.store(in: &cancellables)
+    }
+  
     private func layout() {
         [headerView, textFieldContainerView].forEach(addSubview(_:))
 //   тоже самое что и      addSubview(headerView)

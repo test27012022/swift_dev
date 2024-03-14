@@ -43,7 +43,7 @@ class CalculatorVC: UIViewController {
     
     private func bind() { 
         let input = CalculatorVM.Input(
-            billPublisher: Just(10).eraseToAnyPublisher(),
+            billPublisher: billInputView.valuePublisher, //5. принимаем данные сквозь??
             tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
             anyPublisher: Just(5).eraseToAnyPublisher())
         
