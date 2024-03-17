@@ -19,8 +19,13 @@ class CalculatorVM {
     struct Output {
         let updateViewPublisher: AnyPublisher<Result, Never>
     }
+    private var cancellables = Set<AnyCancellable>()
     
     func transform(input: Input) -> Output {
+        
+        input.tipPublisher.sink { tip in
+            print("tip percent \(tip)")
+        }.store(in: &cancellables)
         
         let result = Result(
             amountPerPerson: 10,
@@ -28,17 +33,5 @@ class CalculatorVM {
             totalTip: 50)
         
         return Output(updateViewPublisher: Just(result).eraseToAnyPublisher() )
-    }
-   
-    
-    
-// exercise
-    
-    private var cancellables = Set<AnyCancellable>()
-    private func callToPublisher(input: Input) {
-        input.billPublisher.sink { bill in
-            print(" the bill in VM - \(bill)")
-        }.store(in: &cancellables)
-
     }
 }

@@ -44,7 +44,7 @@ class CalculatorVC: UIViewController {
     private func bind() { 
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher, //5. принимаем данные сквозь??
-            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+            tipPublisher: tipInputView.valuePublisher,
             anyPublisher: Just(5).eraseToAnyPublisher())
         
         let output = vm.transform(input: input)
