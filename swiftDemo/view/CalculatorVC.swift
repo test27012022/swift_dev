@@ -65,21 +65,22 @@ class CalculatorVC: UIViewController {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher, //5. принимаем данные сквозь??
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitInputView.valuePublisher)
+            splitPublisher: splitInputView.valuePublisher, 
+            logoViewTapPublisher: logoViewTapPublisher)
         
         let output = vm.transform(input: input)
         output.updateViewPublisher.sink { [unowned self] result in
             resultView.configure(result: result)
+        }.store(in: &cancellabels)
+        
+        output.resultCalculatorPublisher.sink { _ in
+            print("reset form")
         }.store(in: &cancellabels)
     }
     
     private func observe() {
         viewTapPublisher.sink { [unowned self] _ in
             view.endEditing(true)
-        }.store(in: &cancellabels)
-        
-        logoViewTapPublisher.sink { _ in
-            print("logo")
         }.store(in: &cancellabels)
     }
     
