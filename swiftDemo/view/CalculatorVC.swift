@@ -45,9 +45,12 @@ class CalculatorVC: UIViewController {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher, //5. принимаем данные сквозь??
             tipPublisher: tipInputView.valuePublisher,
-            anyPublisher: splitInputView.valuePublisher)
+            splitPublisher: splitInputView.valuePublisher)
         
         let output = vm.transform(input: input)
+        output.updateViewPublisher.sink { result in
+            print(result)
+        }.store(in: &cancellabels)
     }
     
     private func layout() {
