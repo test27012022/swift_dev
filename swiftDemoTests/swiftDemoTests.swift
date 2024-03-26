@@ -15,12 +15,13 @@ final class swiftDemoTests: XCTestCase {
     private var sut: CalculatorVM!
     private var cancellables: Set<AnyCancellable>!
     
-    private let logoViewTapSubject = PassthroughSubject<Void, Never>()
+    private var logoViewTapSubject: PassthroughSubject<Void, Never>!
     
     private var audioPlayerService: MockAudioPlayerService!
 
     override func setUp() {
 //        sut = .init()
+        logoViewTapSubject = .init()
         audioPlayerService = .init()
         sut = .init(audioPlayerService: audioPlayerService)
         cancellables = .init()
@@ -31,6 +32,8 @@ final class swiftDemoTests: XCTestCase {
         super.tearDown()
         sut = nil
         cancellables = nil
+        audioPlayerService = nil
+        logoViewTapSubject = nil
     }
 
     func testResultWithoutTipForOnePerson() {
