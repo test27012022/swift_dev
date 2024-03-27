@@ -28,6 +28,7 @@ enum ScreenIdentifier {
         case fifteenPercentButton
         case twentyPercentButton
         case customTipButton
+        case customTipAlertTextField
     }
     
     enum SplitInputView: String {
