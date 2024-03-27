@@ -30,8 +30,25 @@ final class swiftDemoUITests: XCTestCase {
         XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$0")
         XCTAssertEqual(screen.totalBillValueLabel.label, "$0")
         XCTAssertEqual(screen.totalTipValueLabel.label, "$0")
-
-        
     }
     
+    func testRegularTip() {
+        //user enters a 100$ bill
+        screen.enterBill(amount: 100)
+        XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$100")
+        XCTAssertEqual(screen.totalBillValueLabel.label, "$100")
+        XCTAssertEqual(screen.totalTipValueLabel.label, "$0")
+        
+        //user selects 10%
+        screen.selectTip(tip: .tenPercent)
+        XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$110")
+        XCTAssertEqual(screen.totalBillValueLabel.label, "$110")
+        XCTAssertEqual(screen.totalTipValueLabel.label, "$10")
+        
+        //user splits the bill by 2 person
+        screen.selectIncrementButton(numberOfTaps: 1)
+        XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$55")
+        XCTAssertEqual(screen.totalBillValueLabel.label, "$110")
+        XCTAssertEqual(screen.totalTipValueLabel.label, "$10")
+    }
 }
